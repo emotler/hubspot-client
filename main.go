@@ -1,4 +1,4 @@
-package hubspot_client
+package main
 
 import (
 	"bytes"
