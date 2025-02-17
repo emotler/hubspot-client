@@ -19,6 +19,8 @@ var backoffSchedule = []time.Duration{
 	10 * time.Second,
 }
 
+var baseUrl = "https://api.hubapi.com"
+
 type Request struct {
 	HSBaseUrl     string
 	HSToken       string
@@ -35,9 +37,9 @@ type Request struct {
 	Message       string
 }
 
-func Init(hsBaseUrl string, hsToken string) Request {
+func Init(hsToken string) Request {
 	hs := Request{
-		HSBaseUrl:     hsBaseUrl,
+		HSBaseUrl:     baseUrl,
 		HSToken:       hsToken,
 		RequestMethod: "GET",
 		Params:        url.Values{},
